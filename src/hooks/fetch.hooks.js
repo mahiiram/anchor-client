@@ -1,20 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {getUsername} from '../helper/helper.js'
-
 
 
 /** custom hook */
 export default function useFetch(query){
     const [getData, setData] = useState({ isLoading : false, apiData: undefined, status: null, serverError: null })
-
+const email = localStorage.getItem('email')
     useEffect(() => {
          if(!query) return;
         const fetchData = async () => {
             try {
                 setData(prev => ({ ...prev, isLoading: true}));
-                const {username} = !query ? await getUsername() : '';
-                const { data, status } =!query? await axios.get(`https://passwordreset-8w1o.onrender.com/api/${username}`) : await axios.get(`https://passwordreset-8w1o.onrender.com/api/${query}`);
+                const { data, status } =await axios.get(`https://anchor-server.onrender.com/company/${email}`)
 
                 if(status === 201){
                     setData(prev => ({ ...prev, isLoading: false}));

@@ -9,7 +9,7 @@ function Navbar() {
    const email = localStorage.getItem('email')
    useEffect(()=>{
       try {
-         axios.get(`http://localhost:5000/company/getuser/${email}`).then((res)=>{
+         axios.get(`https://anchor-server.onrender.com/company/getuser/${email}`).then((res)=>{
             console.log(res)
             setBalance(res.data.balance)
             localStorage.setItem('companyid',res.data._id)

@@ -9,13 +9,14 @@ import CompanyHome from "./Pages/CompanyHome";
 import Createjob from "./Pages/Createjob";
 
 
+
 const router = createBrowserRouter([
   {
-    path:"/",
+    path:"/register",
     element:<div><CompanyRegister/></div>
   },
   {
-    path:"/login",
+    path:"/",
     element:<div><CompanyLogin /></div>
   },{
     path:'/company/verifyOTP',

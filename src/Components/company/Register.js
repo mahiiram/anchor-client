@@ -49,7 +49,7 @@ function CompanyRegister() {
       <div className='Maindiv'>  
        <div className='text'>
         <h1>SignUp</h1>
-        <p>Happy to join you</p>
+        <p>Company SignUp</p>
        </div>
        <div className='imageDiv'>
         <label htmlFor='logo'>
@@ -73,7 +73,7 @@ function CompanyRegister() {
           <div className='button-div'>
           <button type="submit" className="btn btn-primary" >SignUp</button>
           </div>
-          <div className='button-div'><p>Already registered? <span><Link to='/login' >Login</Link></span></p>
+          <div className='button-div'><p>Already registered? <span><Link to='/' >Login</Link></span></p>
           </div>
           
           

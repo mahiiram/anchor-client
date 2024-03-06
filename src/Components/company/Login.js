@@ -39,7 +39,7 @@ function CompanyLogin() {
       <div className='Maindiv'>  
        <div className='text'>
         <h1>Login</h1>
-        <p>Happy to join you</p>
+        <p>Company Login</p>
        </div>
       <div className='form-div'>
         <form onSubmit={formik.handleSubmit}>
@@ -53,7 +53,7 @@ function CompanyLogin() {
           <div className='button-div'>
           <button type="submit" className="btn btn-primary" >Login</button>
           </div>
-          <div className='button-div'><p>doesnt have an account? <span><Link to='/' >SignUp</Link></span></p>
+          <div className='button-div'><p>doesnt have an account? <span><Link to='/register' >SignUp</Link></span></p>
           </div>
           
           

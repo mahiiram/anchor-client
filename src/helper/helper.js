@@ -4,7 +4,7 @@ import axios from 'axios';
 
 /** register user function */
 export async function registerCompany(credentials){
-    const data  = await axios.post(`http://localhost:5000/company/register`,{
+    const data  = await axios.post(`https://anchor-server.onrender.com/company/register`,{
          name:credentials.name,
          email:credentials.email,
          password:credentials.password,
@@ -16,7 +16,7 @@ export async function registerCompany(credentials){
 
 
 export async function login(credentials){
-    const data  = await axios.post(`http://localhost:5000/company/login`,{
+    const data  = await axios.post(`https://anchor-server.onrender.com/company/login`,{
          email:credentials.email,
          password:credentials.password,
       }).catch((err)=>console.log(err))  
@@ -30,7 +30,7 @@ export async function login(credentials){
 
 /** verify OTP */
 export async function verifyOTP(credentials){
-    const data = await axios.post('http://localhost:5000/company/verifyotp', {
+    const data = await axios.post('https://anchor-server.onrender.com/company/verifyotp', {
         email:credentials.email,
         otp:credentials.otp
        }).catch((err)=>console.log(err))
@@ -38,7 +38,7 @@ export async function verifyOTP(credentials){
     
 }
 export async function addrole(credentials){
-    const data = await axios.post('http://localhost:5000/company/addrole', {
+    const data = await axios.post('https://anchor-server.onrender.com/company/addrole', {
         name:credentials.name,
         minCTC:credentials.minCTC,
         maxCTC:credentials.maxCTC,
@@ -50,3 +50,14 @@ export async function addrole(credentials){
     
 }
 /** reset password */
+
+export const deleteRole= async(id)=>{
+       console.log(id)
+    const res = await axios.delete(`https://anchor-server.onrender.com/company/deleteroles/${id}`).catch((err)=>console.log(err))
+    
+    if( res.data.status === false){
+      return console.log("unexpected err")
+    }
+    const resdata = await res.data;
+    return resdata
+}
